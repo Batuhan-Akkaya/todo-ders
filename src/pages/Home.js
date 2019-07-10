@@ -1,14 +1,14 @@
 import React from 'react';
-import ListItem from './components/ListItem';
 
-class App extends React.Component {
+
+class HomePage extends React.Component {
     render() {
         return (
             <div>
-
+                Home page
             </div>
         );
     }
 }
 
-export default App;
+export default HomePage;
