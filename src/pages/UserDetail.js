@@ -1,9 +1,11 @@
 import React from 'react';
 import axios from 'axios';
+import PostItem from '../components/PostItem';
 
 class UserDetailPage extends React.Component {
     state = {
-        userData: {}
+        userData: {},
+        post: []
     };
 
     async componentDidMount() {
@@ -11,14 +13,39 @@ class UserDetailPage extends React.Component {
         const res = await axios.get(
             'https://jsonplaceholder.typicode.com/users/'+  userId
         );
-        this.setState({userData: res.data});
-
+        const {data} = await axios.get(
+            'https://jsonplaceholder.typicode.com/posts?userId='+userId
+        );
+        this.setState({userData: res.data, post: data});
+        console.log(res.data);
     }
 
     render() {
+        const {userData} = this.state;
+        // console.log(userData.company);
         return (
             <div>
-                User Detail {this.props.match.params.id}
+                {userData ?
+                    <div>
+                        <h1>{userData.name}</h1>
+                        <b>{userData.username}</b> <br/>
+                        <b>{userData.website}</b> <br/>
+                        {/*<b>Şirket ismi: {userData}</b>*/}
+
+
+                        <br/>
+                        Posts:
+                        <hr/>
+                        {this.state.post.map((post) =>
+                            <PostItem
+                                key={post.id}
+                                post={post}
+                            />
+                        )}
+                    </div>
+                    :
+                    <div> yükleniyor...</div>
+                }
             </div>
         );
     }
