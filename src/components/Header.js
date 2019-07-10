@@ -1,13 +1,14 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class Header extends React.Component {
     render() {
         return (
             <header>
                 <ul>
-                    <li>Home Page</li>
-                    <li>Todo Page</li>
-                    <li>Users Page</li>
+                    <li><Link to={'/home'}>Home Page</Link></li>
+                    <li><Link to={'/todo'}>Todo Page</Link></li>
+                    <li><Link to={'/users'}>Users Page</Link></li>
                 </ul>
             </header>
         );
