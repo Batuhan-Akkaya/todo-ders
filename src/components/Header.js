@@ -10,6 +10,7 @@ class Header extends React.Component {
                     <li><Link to={'/todo'}>Todo Page</Link></li>
                     <li><Link to={'/users'}>Users Page</Link></li>
                 </ul>
+                <hr/>
             </header>
         );
     }
