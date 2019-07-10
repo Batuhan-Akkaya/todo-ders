@@ -1,0 +1,17 @@
+@keyframes move {
+    from {
+        top: -500px;
+        opacity: 0.1;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+main {
+    position: relative;
+    animation: move 0.5s;
+    background-color: #fff;
+    margin-top: 0!important;
+}

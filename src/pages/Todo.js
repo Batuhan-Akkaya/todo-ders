@@ -31,7 +31,7 @@ class TodoPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <main>
                 new todo:
                 <input
                     type="text"
@@ -61,7 +61,7 @@ class TodoPage extends React.Component {
                         />
                     )}
                 </ul>
-            </div>
+            </main>
         );
     }
 }

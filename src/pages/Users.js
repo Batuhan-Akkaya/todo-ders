@@ -15,14 +15,14 @@ class UsersPage extends React.Component {
     render() {
         const {users} = this.state;
         return (
-            <div>
+            <main>
                 {users.map((user, index) =>
                     <UserItem
                         key={index}
                         data={user}
                     />
                 )}
-            </div>
+            </main>
         );
     }
 }

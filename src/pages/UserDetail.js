@@ -17,23 +17,20 @@ class UserDetailPage extends React.Component {
             'https://jsonplaceholder.typicode.com/posts?userId='+userId
         );
         this.setState({userData: res.data, post: data});
-        console.log(res.data);
     }
 
     render() {
         const {userData} = this.state;
-        // console.log(userData.company);
         return (
-            <div>
+            <main style={{marginTop: -100}}>
                 {userData ?
                     <div>
                         <h1>{userData.name}</h1>
                         <b>{userData.username}</b> <br/>
                         <b>{userData.website}</b> <br/>
-                        {/*<b>Şirket ismi: {userData}</b>*/}
+                        <b>Şirket ismi: {userData.company ? userData.company.name: null}</b>
 
-
-                        <br/>
+                        <br/><br/>
                         Posts:
                         <hr/>
                         {this.state.post.map((post) =>
@@ -46,7 +43,7 @@ class UserDetailPage extends React.Component {
                     :
                     <div> yükleniyor...</div>
                 }
-            </div>
+            </main>
         );
     }
 }

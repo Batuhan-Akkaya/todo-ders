@@ -2,10 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import {BrowserRouter, Route} from 'react-router-dom';
 
-import HomePage from './pages/Home';
-import TodoPage from './pages/Todo';
-import UsersPage from './pages/Users';
-import UserDetailPage from './pages/UserDetail';
+import {UserDetail, Users, Home, Todo} from './pages';
 
 class App extends React.Component {
     render() {
@@ -14,10 +11,10 @@ class App extends React.Component {
                 <BrowserRouter>
                     <Header/>
 
-                    <Route component={HomePage} path={"/home"} />
-                    <Route component={TodoPage} path={"/todo"} />
-                    <Route component={UsersPage} path={"/users"} />
-                    <Route component={UserDetailPage} path={"/user/:id"} />
+                    <Route component={Home} path={"/home"} />
+                    <Route component={Todo} path={"/todo"} />
+                    <Route component={Users} path={"/users"} />
+                    <Route component={UserDetail} path={"/user/:id"} />
                 </BrowserRouter>
             </div>
         );
